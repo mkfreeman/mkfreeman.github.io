@@ -8,6 +8,8 @@
 		top:10px;
 		right:10px;
 	}
+	.img{border:1px solid;border-color:black;padding:7px;}
+	.img:hover{border-color:white;}
 </style>
 
 <!-- Add D3 JavaSript files --->
@@ -32,24 +34,24 @@
 		<img src="img/linkedin.png" style="height:20px"></img>
 	</a>
 </div>
-<div style="font-size:22px;color:white;text-align:center;">Michael Freeman
+<div style="font-size:22px;color:white;text-align:center;padding-bottom:20px;">Michael Freeman
 
 </div>
 <div style="text-align:center">
-<a id="tobacco" href="http://viz.healthmetricsandevaluation.org/tobacco" target="_blank">
-	<img src="img/tobacco.png" style="height:200px"</img>
+<a  id="tobacco" href="http://viz.healthmetricsandevaluation.org/tobacco" target="_blank">
+	<img class="img" src="img/tobacco.png" style="height:200px"</img>
 </a>
 
-<a id="health-map" href="http://viz.healthmetricsandevaluation.org/us-health-map" target="_blank">
-	<img src="img/health_map.png" style="height:200px"</img>
+<a  id="health-map" href="http://viz.healthmetricsandevaluation.org/us-health-map" target="_blank">
+	<img class="img" src="img/health_map.png" style="height:200px"</img>
 </a>
 
-<a id="human-cost" href="http://mkfreeman.github.io/human_cost" target="_blank">
-	<img src="img/human_cost.png" style="height:200px"</img>
+<a  id="human-cost" href="http://mkfreeman.github.io/human_cost" target="_blank">
+	<img class="img" src="img/human_cost.png" style="height:200px"</img>
 </a>
 
 <a id="divvy" href="http://mkfreeman.github.io/divvy" target="_blank">
-	<img src="img/divvy.png" style="height:200px;"</img>
+	<img class="img" src="img/divvy.png" style="height:200px;"</img>
 </a>
 </div>
 <div style="width:200px; background:black; position:absolute;color:white" id='text-box'>testing text</div>
@@ -63,12 +65,13 @@ text['health-map'] = 'U.S. county level health trends (smoking, physical activit
 text['divvy'] = 'The DIVVY bike sharing program in Chicago -- when do bikers ride?'
 imgs.map(function(img) {
 	$('#' + img).mouseenter(function(e) {
-		var top = $(this).position().top + $(this).height()
+		var top = $(this).position().top + $(this).height() 
 		var left = $(this).position().left
 		$('#text-box').text(text[img])
 		$('#text-box').css('top', top + 'px').css('left', left + 'px')
 		$('#text-box').slideDown(500)
-	}).mouseleave(function() {$('#text-box').slideUp(0)})
+	}).mouseleave(function() {$('#text-box').slideUp(0)
+	})
 })
 </script>
 </div>
