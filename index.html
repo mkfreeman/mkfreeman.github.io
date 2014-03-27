@@ -63,13 +63,19 @@ text.tobacco = 'Prevalence and consumption of tobacco for 187 countries by age a
 text['human-cost'] = 'What is the price of human life? Information is beautiful competition submission.'
 text['health-map'] = 'U.S. county level health trends (smoking, physical activity, obesity, life expectancy, and poverty).'
 text['divvy'] = 'The DIVVY bike sharing program in Chicago -- when do bikers ride?'
+var sliding = false
 imgs.map(function(img) {
 	$('#' + img).mouseenter(function(e) {
 		var top = $(this).position().top + $(this).height() 
 		var left = $(this).position().left
 		$('#text-box').text(text[img])
 		$('#text-box').css('top', top + 'px').css('left', left + 'px')
-		$('#text-box').slideDown(500)
+		if(sliding == false) {
+			sliding = true
+			$('#text-box').slideDown(500, function() {
+				sliding = false
+			})
+		}
 	}).mouseleave(function() {$('#text-box').slideUp(0)
 	})
 })
