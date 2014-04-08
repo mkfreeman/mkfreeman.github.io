@@ -8,6 +8,16 @@
 		top:10px;
 		right:10px;
 	}
+	.tb {
+		position:absolute;
+		color:white;
+		width:200px;
+		text-align:left;
+		background:black;
+	}
+	#container{
+		text-align:left;
+	}
 	.img{border:1px solid;border-color:black;padding:7px;}
 	.img:hover{border-color:white;}
 </style>
@@ -37,7 +47,7 @@
 <div style="font-size:22px;color:white;text-align:center;padding-bottom:20px;">Michael Freeman
 
 </div>
-<div style="text-align:center">
+<div id="container">
 <a  id="tobacco" href="http://viz.healthmetricsandevaluation.org/tobacco" target="_blank">
 	<img class="img" src="img/tobacco.png" style="height:200px"</img>
 </a>
@@ -53,30 +63,38 @@
 <a id="divvy" href="http://mkfreeman.github.io/divvy" target="_blank">
 	<img class="img" src="img/divvy.png" style="height:200px;"</img>
 </a>
+
+<a id="fgh" href="http://viz.healthmetricsandevaluation.org/fgh" target="_blank">
+	<img class="img" src="img/fgh.png" style="height:200px;"</img>
+</a>
 </div>
 <div style="width:200px; background:black; position:absolute;color:white" id='text-box'>testing text</div>
 <script type="text/javascript">
 $('#text-box').hide()
-var imgs = ['tobacco', 'human-cost', 'divvy', 'health-map']
+var imgs = ['tobacco', 'human-cost', 'divvy', 'health-map', 'fgh']
 var text = {}
 text.tobacco = 'Prevalence and consumption of tobacco for 187 countries by age and sex: 1980-2012.'
 text['human-cost'] = 'What is the price of human life? Information is beautiful competition submission.'
 text['health-map'] = 'U.S. county level health trends (smoking, physical activity, obesity, life expectancy, and poverty).'
 text['divvy'] = 'The DIVVY bike sharing program in Chicago -- when do bikers ride?'
+text['fgh'] = 'How has global health funding changed over the past 20 years?  Financing Global Health'
 var sliding = false
 imgs.map(function(img) {
 	$('#' + img).mouseenter(function(e) {
-		var top = $(this).position().top + $(this).height() 
-		var left = $(this).position().left
-		$('#text-box').text(text[img])
-		$('#text-box').css('top', top + 'px').css('left', left + 'px')
-		if(sliding == false) {
-			sliding = true
-			$('#text-box').slideDown(500, function() {
-				sliding = false
-			})
-		}
-	}).mouseleave(function() {$('#text-box').slideUp(0)
+		var self  = this
+		setTimeout(function() {
+			if($("#" + img + '-text').length>0) return
+			var top = $(self).position().top + $(self).height() 
+			var left = $(self).position().left
+			var tb = d3.select('#container').append('div').attr('class', 'tb').attr('id', img + '-text').style('top', top + 'px').style('left', left + 'px')
+			$('#' + img + '-text').hide()
+			tb.append('text').text(text[img])
+			$('#' + img + '-text').slideDown(500)
+		}, 40)
+		
+	}).mouseleave(function() {$('#' + img + '-text').slideUp(0, function() {
+		$('#' + img + '-text').remove()
+	})
 	})
 })
 </script>
