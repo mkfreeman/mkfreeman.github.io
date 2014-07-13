@@ -83,7 +83,7 @@ imgs.map(function(img) {
 	$('#' + img).mouseenter(function(e) {
 		var self  = this
 		setTimeout(function() {
-			if($("#" + img + '-text').length>0) return
+			$('.tb').remove()	
 			var top = $(self).position().top + $(self).height() 
 			var left = $(self).position().left
 			var tb = d3.select('#container').append('div').attr('class', 'tb').attr('id', img + '-text').style('top', top + 'px').style('left', left + 'px')
@@ -93,7 +93,7 @@ imgs.map(function(img) {
 		}, 40)
 		
 	}).mouseleave(function() {$('#' + img + '-text').slideUp(0, function() {
-		$('#' + img + '-text').remove()
+		$('.tb').remove()
 	})
 	})
 })
