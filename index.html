@@ -67,17 +67,21 @@
 <a id="fgh" href="http://viz.healthmetricsandevaluation.org/fgh" target="_blank">
 	<img class="img" src="img/fgh.png" style="height:200px;"</img>
 </a>
+<a id="course" href="http://viz.healthmetricsandevaluation.org/fgh" target="_blank">
+	<img class="img" src="img/course.png" style="width:303px;"</img>
+</a>
 </div>
 <div style="width:200px; background:black; position:absolute;color:white" id='text-box'>testing text</div>
 <script type="text/javascript">
 $('#text-box').hide()
-var imgs = ['tobacco', 'human-cost', 'divvy', 'health-map', 'fgh']
+var imgs = ['tobacco', 'human-cost', 'divvy', 'health-map', 'fgh', 'course']
 var text = {}
 text.tobacco = 'Prevalence and consumption of tobacco for 187 countries by age and sex: 1980-2012.'
 text['human-cost'] = 'What is the price of human life? Information is beautiful competition submission.'
 text['health-map'] = 'U.S. county level health trends (smoking, physical activity, obesity, life expectancy, and poverty).'
 text['divvy'] = 'The DIVVY bike sharing program in Chicago -- when do bikers ride?'
 text['fgh'] = 'How has global health funding changed over the past 20 years?  Financing Global Health'
+text['course'] = 'Guest Lecture at UW: A presentation on the definition and value of visualizations.'
 var sliding = false
 imgs.map(function(img) {
 	$('#' + img).mouseenter(function(e) {
