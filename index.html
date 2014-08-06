@@ -48,6 +48,9 @@
 
 </div>
 <div id="container">
+<a  id="mdg" href="http://vizhub.healthdata.org/mdg" target="_blank">
+	<img class="img" src="img/mdg.png" style="height:200px"</img>
+</a>
 <a  id="tobacco" href="http://viz.healthmetricsandevaluation.org/tobacco" target="_blank">
 	<img class="img" src="img/tobacco.png" style="height:200px"</img>
 </a>
@@ -74,7 +77,7 @@
 <div style="width:200px; background:black; position:absolute;color:white" id='text-box'>testing text</div>
 <script type="text/javascript">
 $('#text-box').hide()
-var imgs = ['tobacco', 'human-cost', 'divvy', 'health-map', 'fgh', 'course']
+var imgs = ['mdg', 'tobacco', 'human-cost', 'divvy', 'health-map', 'fgh', 'course']
 var text = {}
 text.tobacco = 'Prevalence and consumption of tobacco for 187 countries by age and sex: 1980-2012.'
 text['human-cost'] = 'What is the price of human life? Information is beautiful competition submission.'
@@ -82,6 +85,8 @@ text['health-map'] = 'U.S. county level health trends (smoking, physical activit
 text['divvy'] = 'The DIVVY bike sharing program in Chicago -- when do bikers ride?'
 text['fgh'] = 'How has global health funding changed over the past 20 years?  Financing Global Health'
 text['course'] = 'Guest Lecture at UW: A presentation on the definition and value of visualizations.'
+text['mdg'] = 'Explore country level progress towards achieving the Millennium Development Goals'
+
 var sliding = false
 imgs.map(function(img) {
 	$('#' + img).mouseenter(function(e) {
