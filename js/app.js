@@ -9,9 +9,9 @@ var myApp = angular.module('myApp', ['ngRoute'])
     templateUrl: 'templates/content.html',
     controller: 'ContentController',
   })
-   .when('/about/', {
-    templateUrl: 'templates/about.html',
-    controller: 'AboutController',
+   .when('/teaching/', {
+    templateUrl: 'templates/teaching.html',
+    controller: 'TeachingController',
   })
   .when('/projects/', {
     templateUrl: 'templates/projects.html',
@@ -36,24 +36,24 @@ var myApp = angular.module('myApp', ['ngRoute'])
 })
 
 // Content controller
-.controller('ContentController', function($scope){
-  $scope.url = "http://conference.unavsa.org/wp-content/uploads/2015/06/SEA-pic.jpg"
+.controller('TeachingController', function($scope, TeachingData){
+  TeachingData.then(function(data){
+    $scope.courses = data
+  })
 })
+
 // Projects controller
 .controller('ProjectsController', function($scope, ProjectData){
   ProjectData.then(function(data){
     $scope.projects = data
-    console.log('projects', $scope.projects)
   })
 })
 
 
 // Landing page data
 .factory('ProjectData', ['$http','$sce', function($http, $sce){
-  var Url   = "data/projects.csv";
-  var ProjectData = $http.get(Url).then(function(response){
+  var ProjectData = $http.get("data/projects.csv").then(function(response){
      arr = CSVToArray(response.data);
-
      // Allow HTML rendering
      arr.map(function(d) {d.description = $sce.trustAsHtml(d.description);})
      return arr
@@ -61,3 +61,15 @@ var myApp = angular.module('myApp', ['ngRoute'])
   return ProjectData
 }])
 
+
+// Teaching page data
+.factory('TeachingData', ['$http','$sce', function($http, $sce){
+  var TeachingData = $http.get("data/courses.csv").then(function(response){
+     arr = CSVToArray(response.data);
+    
+     // Allow HTML rendering
+     arr.map(function(d) {d.description = $sce.trustAsHtml(d.description);})
+     return arr
+  })
+  return TeachingData
+}])
