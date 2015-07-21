@@ -22,15 +22,15 @@
 	.img:hover{border-color:white;}
 </style>
 
-<!-- Add D3 JavaSript files --->
+<!-- Add D3 JavaSript files -->
 		<script type="text/javascript" src="lib/d3-2.10.3/d3.v2.min.js"></script>
 		<script type="text/javascript" src="lib/d3-2.10.3/lib/colorbrewer/colorbrewer.js"></script>
 		
-		<!-- Add jQuery and jQuery UI JavaSript files --->
+		<!-- Add jQuery and jQuery UI JavaSript files -->
 		<script type="text/javascript" src="lib/jquery-1.8.2.min.js"></script>
 		<script type="text/javascript" src="lib/jquery-ui-1.9.0.custom/js/jquery-ui-1.9.0.custom.js"></script>
 		
-		<!-- Add additonal libaries JavaSript files (these may or may not be necesssay depending on the needs of your visualization) --->
+		<!-- Add additonal libaries JavaSript files (these may or may not be necesssay depending on the needs of your visualization) -->
 		<script type="text/javascript" src="lib/poshytip/src/jquery.poshytip.js"></script> 
 		
 	<title>Michael Freeman</title>
@@ -48,10 +48,17 @@
 
 </div>
 <div id="container">
+<a  id="divvy_new" href="http://faculty.washington.edu/mikefree/divvy" target="_blank">
+	<img class="img" src="img/divvy_new.png" style="height:200px"</img>
+</a>
+
+<a  id="mdg" href="http://vizhub.healthdata.org/mdg" target="_blank">
+	<img class="img" src="img/mdg.png" style="height:200px"</img>
+</a>
 <a  id="tobacco" href="http://viz.healthmetricsandevaluation.org/tobacco" target="_blank">
 	<img class="img" src="img/tobacco.png" style="height:200px"</img>
 </a>
-
+1
 <a  id="health-map" href="http://viz.healthmetricsandevaluation.org/us-health-map" target="_blank">
 	<img class="img" src="img/health_map.png" style="height:200px"</img>
 </a>
@@ -67,21 +74,32 @@
 <a id="fgh" href="http://viz.healthmetricsandevaluation.org/fgh" target="_blank">
 	<img class="img" src="img/fgh.png" style="height:200px;"</img>
 </a>
-<a id="course" href="http://mkfreeman.github.io/db_lecture/" target="_blank">
+<!-- <a id="course" href="http://mkfreeman.github.io/db_lecture/" target="_blank">
 	<img class="img" src="img/course.png" style="width:303px;"</img>
+</a> -->
+<a id="video" href="http://shop.oreilly.com/product/0636920040064.do#" target="_blank">
+	<img class="img" src="img/video.png" style="width:303px;"</img>
+</a>
+<a  id="collage" href="http://mkfreeman.github.io/collage" target="_blank">
+	<img class="img" src="img/collage.png" style="height:200px"</img>
 </a>
 </div>
 <div style="width:200px; background:black; position:absolute;color:white" id='text-box'>testing text</div>
 <script type="text/javascript">
 $('#text-box').hide()
-var imgs = ['tobacco', 'human-cost', 'divvy', 'health-map', 'fgh', 'course']
+var imgs = ['divvy_new', 'collage', 'mdg', 'tobacco', 'human-cost', 'divvy', 'health-map', 'fgh', 'video']
 var text = {}
 text.tobacco = 'Prevalence and consumption of tobacco for 187 countries by age and sex: 1980-2012.'
+text['divvy_new'] = 'Watch bikers draw Chicago.'
 text['human-cost'] = 'What is the price of human life? Information is beautiful competition submission.'
+text['collage'] = 'A tool to make a collage of instagram photos.'
 text['health-map'] = 'U.S. county level health trends (smoking, physical activity, obesity, life expectancy, and poverty).'
 text['divvy'] = 'The DIVVY bike sharing program in Chicago -- when do bikers ride?'
 text['fgh'] = 'How has global health funding changed over the past 20 years?  Financing Global Health'
-text['course'] = 'Guest Lecture at UW: A presentation on the definition and value of visualizations.'
+text['course'] = 'Lecture at UW: The definition and value of visualizations.'
+text['mdg'] = 'Explore country level progress towards achieving the Millennium Development Goals'
+text['video'] = 'Video tutorial on leveraging storytelling to enhance visual communication.'
+
 var sliding = false
 imgs.map(function(img) {
 	$('#' + img).mouseenter(function(e) {
