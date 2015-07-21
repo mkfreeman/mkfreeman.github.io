@@ -1,0 +1,74 @@
+.header {
+	border-bottom:1px solid #e3e3e3;
+}
+
+body {
+
+	margin-bottom:100px;
+}
+.footer {
+	position:fixed;
+	bottom:0px;
+	border-top:1px solid #e3e3e3;
+	width:100%;
+	left:0px;
+	text-align:center;
+	padding:10px;
+	background: white;
+}
+
+#app {
+	margin-top:100px;
+}
+
+.section {
+	font-size:30px;
+	opacity:.8;
+	text-decoration: underline;
+	padding-left:20px;
+}
+
+a {
+	cursor:pointer;
+}
+
+.title {
+	font-size:22px !important;
+}
+
+a:hover {
+	color:#67B3F4 !important;
+	text-decoration: none;
+}
+
+.project {
+	width:80%;
+	padding:10px;
+	padding-left:30px;
+}
+
+.description {
+	opacity:.5;
+	font-size:16px;
+}
+
+.project-img {
+	max-width:200px;
+	max-height:200px;
+}
+
+nav.navbar-default {
+	background-color: white;
+}
+
+.active {
+	color:black !important;
+	background-color: white;
+}
+
+.navbar.navbar-default.navbar-fixed-top {
+	right:20px;
+	left:20px;
+	padding-top:15px;
+	padding-bottom:15px;
+}

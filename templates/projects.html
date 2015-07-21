@@ -1,0 +1,15 @@
+<div class="section">Selected Projects</div>
+	
+	<div class="project row" ng-repeat="project in projects">
+		<p ng-if="project.url">
+			<a class="title" target="_blank" href='{{project.url}}'>{{project.title}}</a>
+		</p>
+		<div class="row">
+			<div class="col-md-4">
+				<a class="title" target="_blank" href='{{project.url}}'>
+					<img ng-src="imgs/{{project.project_id}}.png" class="project-img"></img>
+				</a>
+			</div>
+			<p class="description col-md-8" ng-bind-html='project.description'></p>
+		</div>
+</div>
