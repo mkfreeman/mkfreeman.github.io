@@ -4,7 +4,7 @@
 
 body {
 
-	margin-bottom:100px;
+	/*margin-bottom:100px;*/
 }
 .footer {
 	position:fixed;
@@ -19,6 +19,19 @@ body {
 
 #app {
 	margin-top:100px;
+	height:100%;
+}
+
+#app .container, main, #img-div {
+	height:100%;
+}
+
+#img-div {
+	height:calc(100% - 80px);
+	background:url('../imgs/tree.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .section {
@@ -71,11 +84,67 @@ nav.navbar-default {
 	padding-top:15px;
 	padding-bottom:15px;
 }
-
-main {
-	padding-left:10%;
+html {
+  height: 100%;
 }
+
+body {
+	height:calc(100% - 100px);
+}
+
+/*main {
+	padding-left:10%;
+	position:fixed !important;
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+}*/
 
 p {
 	margin-bottom:0px;
 }
+
+#tree {
+	width:100%;
+	margin-bottom:50px;
+}
+
+#landing-div div {
+	display: inline-block;
+}
+
+.spacer {
+	border-bottom:1px solid black;
+}
+
+#landing-text {
+	font-size:40px;
+	opacity:.5;
+}
+
+#project-div {
+	text-align:center;
+}
+
+#about-div {
+	text-align:right;
+}
+@media screen and (max-width:992px) {
+	#about-div, #project-div {
+		text-align:left !important;
+	}
+	#landing-text {
+		font-size:20px !important;
+	}
+	#img-div {
+		height:calc(100% - 100px);
+	}
+}
+
+/*body {
+	background:url('../imgs/fgh.png');
+	background-size:cover;
+	background-repeat: no-repeat;
+}*/
