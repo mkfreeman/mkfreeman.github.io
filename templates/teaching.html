@@ -3,12 +3,14 @@
 		<div class="col-md-8">I'm currently a faculty member at the <a href="https://ischool.uw.edu/" target="_blank">Information School</a> at the University of Washington, where I teach courses in data visualization, web development, and informatics
 		</div>
 	</div> -->
-	<div class="row course" ng-repeat="course in courses">
-		<p ng-if="course.url">
-			<a class="title" target="_blank" href='{{course.url}}'>{{course.title}}</a>
-		</p>
-		<div class="row">
-			<p class="description col-md-12" ng-bind-html='course.description'></p>
+	<div class="container-fluid">
+		<div class="row course" ng-repeat="course in courses">
+			<p>
+				<a class="title" target="_blank" href='{{course.url}}'>{{course.title}}</a>
+			</p>
+			<div class="row">
+				<p class="description col-md-12" ng-bind-html='course.description'></p>
+			</div>
 		</div>
 	</div>
 </div>
