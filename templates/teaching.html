@@ -4,7 +4,17 @@
 		</div>
 	</div> -->
 	<div class="container-fluid">
-		<div class="row course" ng-repeat="course in courses">
+		<div class="grouping">Courses</div>
+		<div class="row course" ng-if="course.type == 'course'" ng-repeat="course in courses">
+			<p>
+				<a class="title" target="_blank" href='{{course.url}}'>{{course.title}}</a>
+			</p>
+			<div class="row">
+				<p class="description col-md-12" ng-bind-html='course.description'></p>
+			</div>
+		</div>
+		<div class="grouping">Talks</div>
+		<div class="row course" ng-if="course.type == 'talk'" ng-repeat="course in courses">
 			<p>
 				<a class="title" target="_blank" href='{{course.url}}'>{{course.title}}</a>
 			</p>

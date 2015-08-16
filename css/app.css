@@ -33,7 +33,7 @@ main {
 	height:100%;
 }
 #img-div {
-	height:calc(100% - 80px);
+	height:calc(100% - 50px);
 	background:url('../imgs/tree.png');
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -126,7 +126,7 @@ p {
 }
 
 #landing-text {
-	font-size:40px;
+	font-size:35px;
 	opacity:.5;
 }
 
@@ -147,6 +147,24 @@ p {
 	#img-div {
 		height:calc(100% - 100px);
 	}
+}
+
+.grouping {
+	text-decoration:underline;
+	font-size:27px;
+}
+
+#photo {
+	max-width:50%;
+	margin-bottom:20px;
+}
+
+.copyright {
+    text-align: right;
+    padding-right:10px;
+    font-size:13px;
+    background:white;
+    margin-bottom:-3px;
 }
 
 /*body {

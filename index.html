@@ -32,10 +32,14 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-right">
-                <li><a ng-class="{'active':$location.path() == '/'}" href="#/">HOME</a></li>
-                <li><a ng-class="{'active':$location.path() == '/teaching/'}" href="#/teaching">TEACHING</a></li>
-                <li><a ng-class="{'active':$location.path() == '/projects/'}" href="#/projects">VISUALIZATION</a></li>
-                <li><a ng-class="{'active':$location.path() == '/contact/'}" href="#/about">ABOUT</a></li>
+                <li><a class="hidden-xs" ng-class="{'active':$location.path() == '/'}" href="#/">HOME</a></li>
+                <li><a class="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" ng-class="{'active':$location.path() == '/'}" href="#/">HOME</a></li>
+                <li><a class="hidden-xs" ng-class="{'active':$location.path() == '/teaching/'}" href="#/teaching">TEACHING</a></li>
+                <li><a class="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" ng-class="{'active':$location.path() == '/teaching/'}" href="#/teaching">TEACHING</a></li>
+                <li><a class="hidden-xs" ng-class="{'active':$location.path() == '/projects/'}" href="#/projects">VISUALIZATION</a></li>
+                <li><a class="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" ng-class="{'active':$location.path() == '/projects/'}" href="#/projects">VISUALIZATION</a></li>
+                <li><a class="hidden-xs" ng-class="{'active':$location.path() == '/about/'}" href="#/about">ABOUT</a></li>
+                <li><a class="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" ng-class="{'active':$location.path() == '/about/'}" href="#/about">ABOUT</a></li>
               </ul>
             </div><!--/.nav-collapse -->
           </div><!--/.container-fluid -->
@@ -44,6 +48,10 @@
       <main ng-class="{'full':$location.path() == '/'}" ng-view></main>
     </div>
     <div class="footer">
+      <div class="copyright">
+           &#169; 2015,
+            <a target = "_blank" href="https://ischool.uw.edu/people/faculty/mikefree">Michael Freeman</a>
+      </div>
     </div>
   </div>
 </div>
