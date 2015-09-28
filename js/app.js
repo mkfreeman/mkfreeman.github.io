@@ -38,6 +38,7 @@ var myApp = angular.module('myApp', ['ngRoute'])
 // Content controller
 .controller('TeachingController', function($scope, TeachingData){
   TeachingData.then(function(data){
+    console.log('courses ',data)
     $scope.courses = data
   })
 })
