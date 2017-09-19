@@ -1,0 +1,42 @@
+/* Resources.css */
+.Projects {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+}
+
+.Projects p {
+    opacity:.5;
+    margin-top:2px;
+}
+.Projects .cardWrapper { 
+    margin-bottom:10px;
+    padding:10px;
+    display: flex;
+}
+
+.Projects .cards {
+    text-align:center;
+    width:900px;
+}
+
+.Projects .cardImage {
+    display: inline-block;
+    flex-basis: 33%;  
+    height:200px;
+}
+
+.Projects .cardDescription {
+    display: inline-block;
+    flex-basis: 66%;
+}
+
+.Projects h2 {
+    color:gray;
+    font-family:"Roboto";
+    margin-bottom:0px;
+}
+
+.Projects .cardDescription p {
+    text-align: left;
+}

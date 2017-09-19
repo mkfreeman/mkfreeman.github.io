@@ -33,3 +33,14 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.section-title {
+  color:gray;
+  font-family:"Roboto";
+  margin-bottom:0px;
+}
+
+.section-description {
+  opacity:.5;
+  margin-top:2px;
+}
