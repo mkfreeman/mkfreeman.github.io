@@ -14,6 +14,8 @@
   color: white;
   font-family:'Roboto', sans-serif;  
   text-align: left;
+  position:relative;
+  overflow:hidden;
 }
 
 .App-header h1 {
@@ -38,9 +40,19 @@
   color:gray;
   font-family:"Roboto";
   margin-bottom:0px;
+  font-size:2.5em;
 }
 
 .section-description {
-  opacity:.5;
+  opacity:.3;
   margin-top:2px;
+  margin-left:auto;
+  margin-right:auto;
+  width:75%
+}
+
+.burst {
+  position: absolute;
+  top:-150px;
+  right:-150px;
 }
