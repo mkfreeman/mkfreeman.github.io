@@ -3,11 +3,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
   background-color: #8DBADF;
   padding-top: 50px;
@@ -28,6 +23,9 @@
 and (min-device-width: 520px) {
   .App-header h1 {
     font-size:2.5em;
+  }
+  .App-header h2 {
+    font-size:1.3em;
   }
 }
 
@@ -76,9 +74,7 @@ and (min-device-width: 520px) {
   top:-150px;
   right:-150px;
 }
-/* 
+
 section {
-  max-width:1000px;
-  margin-left:auto;
-  margin-right:auto;
-} */
+  border-bottom:1px solid #d3d3d3;
+}

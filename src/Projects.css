@@ -20,9 +20,9 @@
     text-align:center;
 }
 
-.Projects a {
-    opacity:.6;
-  }
+.Projects a:hover {
+    text-decoration:underline !important;
+}
 
 .Projects .cardImage {
     display: inline-block;
@@ -43,4 +43,33 @@
 
 .Projects .cardDescription p {
     text-align: left;
+}
+
+.Projects .grid-description {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+img {
+    opacity:1;
+    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+}
+img:hover {
+    opacity: .1;
+    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+}
+
+.grid-tile > div > div > div {
+    /* color:red; */
+    z-index:-100;
+    color:#7A7878;
+    font-size:1.2em !important;
+    font-weight:100;
+
 }

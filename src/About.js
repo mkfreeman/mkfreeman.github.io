@@ -19,7 +19,7 @@ class About extends Component {
                             Information School. I have a background in Sociology and Health Measurement, and
                             currently teach courses that range from Web Development to Data Visualization.
                             I'm interested in socially impactful applications of these skills, and am still
-                            figuring out what that means. For now, find me on twitter (<a href="https://twitter.com/mf_viz" target="_blank">@mf_viz</a>), or shoot me an
+                            figuring out what that means. For now, find me on twitter (<a href="https://twitter.com/mf_viz" target="_blank">@mf_viz</a>), or shoot me an&nbsp;
                             <a href="mailto:michael.k.freeman@gmail.com">email</a>.</p>
                         <div className="cardImage">
                             <CardMedia className="cardMedia">

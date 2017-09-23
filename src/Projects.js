@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {GridList, GridTile} from 'material-ui/GridList';
 import './Projects.css';
 import ProjectCard from './ProjectCard';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -19,17 +20,51 @@ class Projects extends Component {
             }.bind(this))
     }
     render() {
+        const styles = {
+            root: {
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: 'space-around'
+            },
+            gridList: {
+                width: '100%',
+                overflowY: 'auto'
+            }
+        };
         return (
             <div className="Projects">
                 <MuiThemeProvider>
-                    <div className="cards">
+                    <GridList cols={3} cellHeight={200} padding={1} style={styles.gridList}>
                         {this
                             .state
                             .data
-                            .map(function (d, i) {
-                                return <ProjectCard key={i} data={d}/>
-                            })}
-                    </div>
+                            .map((tile) => (
+                                <GridTile
+                                    className="grid-tile"
+                                    subtitleStyle={{
+                                    position: 'absolute',
+                                    'white-space': 'unset',
+                                    'margin-top': '9px'
+                                }}
+                                    key={tile.img}
+                                    title={< a style = {{color:'white', 'fontSize':'1.5em', 'text-decoration':'none'}}href = {
+                                    tile.url
+                                }
+                                target = "_blank" > {
+                                    tile.title
+                                } < /a>}
+                                    subtitle={tile.description}
+                                    actionPosition="left"
+                                    titlePosition="top"
+                                    titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
+                                    cols={window.innerWidth < 600
+                                    ? 3
+                                    : tile.cols}
+                                    rows={tile.rows}>
+                                    <img src={tile.img}/>
+                                </GridTile>
+                            ))}
+                    </GridList>
                 </MuiThemeProvider>
             </div>
         )

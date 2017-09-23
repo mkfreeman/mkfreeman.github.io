@@ -7,6 +7,9 @@ import './App.css';
 var Isvg = require('react-inlinesvg');
 
 class App extends Component {
+    componentDidMount() {
+        document.title = "Michael Freeman"
+    }
     render() {
         return (
             <div className="App">
