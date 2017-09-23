@@ -20,6 +20,10 @@
     text-align:center;
 }
 
+.Projects a {
+    opacity:.6;
+  }
+
 .Projects .cardImage {
     display: inline-block;
     flex-basis: 20%;  

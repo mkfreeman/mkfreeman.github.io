@@ -1,1 +1,29 @@
 /* About.css */
+
+.About .cardMedia{
+    flex-basis:20%;
+
+}
+
+.About img {
+    border-radius:50%;
+}
+
+.about-wrapper {
+    max-width:1000px;
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+    text-align:left;
+}
+
+.About p {
+    opacity: .5;
+    margin-top: 2px;
+}
+
+.About {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}

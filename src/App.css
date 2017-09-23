@@ -9,8 +9,9 @@
 }
 
 .App-header {
-  background-color: #BBDEFB;
-  padding: 20px;
+  background-color: #8DBADF;
+  padding-top: 50px;
+  padding-left:20px;
   color: white;
   font-family:'Roboto', sans-serif;  
   text-align: left;
@@ -19,14 +20,33 @@
 }
 
 .App-header h1 {
-  font-size:3em;    
+  font-size:3.5em;    
   font-variant: small-caps;
 }
+
+@media only screen 
+and (min-device-width: 520px) {
+  .App-header h1 {
+    font-size:2.5em;
+  }
+}
+
+
 .App-header h1, h2 {
   margin-top:0px;
   margin-bottom:0px;
 }
 
+.App-header h3 {
+  display:inline-block;
+  padding-right:10px;
+  margin-bottom:0px;
+  margin-top:40px;
+  font-variant:small-caps;
+}
+.App-header a {
+  color:white;
+}
 .App-intro {
   font-size: large;
 }
@@ -56,3 +76,9 @@
   top:-150px;
   right:-150px;
 }
+/* 
+section {
+  max-width:1000px;
+  margin-left:auto;
+  margin-right:auto;
+} */
