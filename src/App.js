@@ -5,10 +5,20 @@ import Projects from './Projects';
 import About from './About';
 import './App.css';
 var Isvg = require('react-inlinesvg');
+var ReactGA = require('react-ga');
+
+function logPageView() {
+    ReactGA.set({
+        page: window.location.pathname + window.location.search
+    });
+    ReactGA.pageview(window.location.pathname + window.location.search);
+}
 
 class App extends Component {
     componentDidMount() {
-        document.title = "Michael Freeman"
+        document.title = "Michael Freeman";
+        ReactGA.initialize('UA-49431863-1');
+        logPageView();
     }
     render() {
         return (
