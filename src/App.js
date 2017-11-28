@@ -16,7 +16,6 @@ function logPageView() {
 
 class App extends Component {
     componentDidMount() {
-        document.title = "Michael Freeman";
         ReactGA.initialize('UA-49431863-1');
         logPageView();
     }
