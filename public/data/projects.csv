@@ -1,10 +1,10 @@
-img,title,description,url,rows,cols
-imgs/hierarchy.png,Hierarchical Modeling,A visual explanation of hierarchical modeling,http://mfviz.com/hierarchical-models,2,2
-imgs/triangulate.png,Triangulate,A tool for adding geometric patterns to images,http://mfviz.com/triangulate,2,1
-imgs/fgh.png,Financing Global Health,An interactive visualization exploring the flows of money in global health. ,http://vizhub.healthdata.org/fgh/,1,3
-imgs/divvy.png,Bike Sharing,This project uses Leaflet.js to visualize millions of bike routes in Chicago. ,http://faculty.washington.edu/mikefree/divvy/,1,1
-imgs/central-limit.png,Central Limit Theorem,A visual explanation describing the theory and importance of the Central Limit Theorem.,http://mfviz.com/central-limit,1,1
-imgs/tobacco.png,Tobacco Use,Smoking trends around the world from 1980 - 2012.,http://vizhub.healthdata.org/tobacco/,1,1
-imgs/stm-browser.png,stmBrowser,An R package allows R users to visualize the results of Structural Topic Models.,https://github.com/mroberts/stmBrowser,1,1
-imgs/mdg.png,Development Goals,Are countries on track to meet the Millenium Development Goals?,http://vizhub.healthdata.org/mdg/,1,1
-imgs/text-arc.png,Text Arc,A project for visualizing text as an arc.,https://mfviz.com/text-arc,1,1
+img,title,description,url,alt,rows,cols
+imgs/hierarchy.png,Hierarchical Modeling,A visual explanation of hierarchical modeling,http://mfviz.com/hierarchical-models,nested circles showing a hierarchy,2,2
+imgs/triangulate.png,Triangulate,A tool for adding geometric patterns to images,http://mfviz.com/triangulate,artistic rendering of triangulated mountain,2,1
+imgs/fgh.png,Financing Global Health,An interactive visualization exploring the flows of money in global health. ,http://vizhub.healthdata.org/fgh/,sankey diagram showing flow of global health funding,1,3
+imgs/divvy.png,Bike Sharing,This project uses Leaflet.js to visualize millions of bike routes in Chicago. ,http://faculty.washington.edu/mikefree/divvy/,stylized map of chicago showing bike routes,1,1
+imgs/central-limit.png,Central Limit Theorem,A visual explanation describing the theory and importance of the Central Limit Theorem.,http://mfviz.com/central-limit,histogram of uniform distribution,1,1
+imgs/tobacco.png,Tobacco Use,Smoking trends around the world from 1980 - 2012.,http://vizhub.healthdata.org/tobacco/,sunburst diagram of number of smokers,1,1
+imgs/stm-browser.png,stmBrowser,An R package allows R users to visualize the results of Structural Topic Models.,https://github.com/mroberts/stmBrowser,scatter plot of document term frequencies,1,1
+imgs/mdg.png,Development Goals,Are countries on track to meet the Millenium Development Goals?,http://vizhub.healthdata.org/mdg/,density plot of millenium development goal progress,1,1
+imgs/text-arc.png,Text Arc,A project for visualizing text as an arc.,https://mfviz.com/text-arc,text shown bending along a curve,1,1
