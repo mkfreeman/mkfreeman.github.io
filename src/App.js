@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import Resources from './Resources';
 import Projects from './Projects';
@@ -24,10 +24,10 @@ class App extends Component {
             <div className="App">
                 <div className="App-header">
                     <h1>Michael Freeman</h1>
-                    <h2>Lecturer at&nbsp;
+                    <h2>Senior Lecturer at&nbsp;
                         <a href="https://ischool.uw.edu" target="_blank">UW iSchool</a>
                     </h2>
-                    <h2>Visualization. Data Science. Web Development.</h2>
+                    <h2>Data Science. Visualization. Web Development.</h2>
                     <h3>
                         <span>
                             <a href="#resources">resources</a>
@@ -42,25 +42,31 @@ class App extends Component {
                         <span>
                             <a href="#about">about</a>
                         </span>
+
                     </h3>
-                    <Isvg className="burst" src="imgs/sunburst.svg"/>
+                    <h3>
+                        <span>
+                            <a href="./freeman-cv.pdf">vita</a>
+                        </span>
+                    </h3>
+                    <Isvg className="burst" src="imgs/sunburst.svg" />
                 </div>
                 <section id="resources">
                     <h1 className="section-title">Learning Resources</h1>
                     <p className="section-description">I develop open-source learning resources to
                         improve access to and understanding of programming languages.</p>
-                    <Resources/>
+                    <Resources />
                 </section>
                 <section className="projects" id="projects">
                     <h1 className="section-title">Selected Projects</h1>
                     <p className="section-description">I've worked on a variety of large-scale
                         visualization and data science projects. Here are some of the things I've built.</p>
-                    <Projects/>
+                    <Projects />
                 </section>
                 <section className="about" id="about">
                     <h1 className="section-title">About</h1>
                     <p className="section-description">A (very) little bit about me.</p>
-                    <About/>
+                    <About />
                 </section>
             </div>
         );
