@@ -42,6 +42,12 @@ class App extends Component {
                         <span>
                             <a href="#about">about</a>
                         </span>
+
+                    </h3>
+                    <h3>
+                        <span>
+                            <a href="./freeman-cv.pdf">vita</a>
+                        </span>
                     </h3>
                     <Isvg className="burst" src="imgs/sunburst.svg" />
                 </div>
