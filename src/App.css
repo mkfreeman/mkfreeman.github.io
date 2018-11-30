@@ -3,6 +3,14 @@
   text-align: center;
 }
 
+#book-img {
+    /* width:75%; */
+    max-height:500px;
+    max-width:90%;
+    height:auto;
+    opacity:1;
+}
+
 .App-header {
   background-color: #8DBADF;
   padding-top: 50px;
@@ -15,17 +23,20 @@
 }
 
 .App-header h1 {
-  font-size:3.5em;    
+  font-size:2.5em;    
   font-variant: small-caps;
 }
 
 @media only screen 
-and (min-device-width: 520px) {
+and (min-width: 520px) {
   .App-header h1 {
     font-size:2.5em;
   }
   .App-header h2 {
     font-size:1.3em;
+  }
+  #book-img {
+      width:auto;
   }
 }
 
