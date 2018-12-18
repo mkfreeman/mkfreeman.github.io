@@ -65,7 +65,7 @@ class App extends Component {
                     <h1 className="section-title">Book</h1>
                     <p className="section-description">Check out my new book, <em>Programming Skills for Data Science</em>! You can get it <a rel="noopener noreferrer" target="_blank" href="https://www.amazon.com/gp/product/0135133106">online</a>, or learn more about it <a rel="noopener noreferrer" target="_blank" href="https://programming-for-data-science.github.io/">here</a>.</p>
                     {/* <div id="book-cover" /> */}
-                    <a rel="noopener noreferrer" target="_blank" href="https://www.amazon.com/gp/product/0135133106"><img src="/imgs/front-cover.png" id="book-img" /></a>
+                    <a rel="noopener noreferrer" target="_blank" href="https://www.amazon.com/gp/product/0135133106"><img src="imgs/front-cover.png" id="book-img" /></a>
                 </section>
                 <section className="projects" id="projects">
                     <h1 className="section-title">Selected Projects</h1>
