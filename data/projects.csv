@@ -1,11 +1,11 @@
 img,title,description,url,alt,rows,cols
-imgs/hierarchy.png,Hierarchical Modeling,A visual explanation of hierarchical modeling,http://mfviz.com/hierarchical-models,nested circles showing a hierarchy,2,2
-imgs/summary_table.png,Summary Table,A utility to quickly summarize a dataset,https://observablehq.com/@observablehq/summary-table,Summary table ,,
+imgs/hierarchy.png,Hierarchical Modeling,A visual explanation of hierarchical modeling,http://mfviz.com/hierarchical-models,nested circles showing a hierarchy,2,1
+imgs/summary_table.png,Summary Table,A utility to quickly summarize a dataset,https://observablehq.com/@observablehq/summary-table,Summary table ,2,1
+imgs/discovering_patterns.png,Date Patterns,Novel representations of seemingly simple timeseries data,https://observablehq.com/@observablehq/discovering-date-patterns,Discovery diagram,2,1
 imgs/fgh.png,Financing Global Health,An interactive visualization exploring the flows of money in global health. ,http://vizhub.healthdata.org/fgh/,sankey diagram showing flow of global health funding,1,3
-imgs/discovering_patterns.png,Discovering date patterns,Novel representations of seemingly simple timeseries data,,,,
 imgs/binary-preds.png,Prediction Metrics,A visual explanation of binary prediction metrics.,http://mfviz.com/binary-predictions,chart of prediction accuracy,1,1
-imgs/triangulate.png,Triangulate,A tool for adding geometric patterns to images,http://mfviz.com/triangulate,artistic rendering of triangulated mountain,2,1
+imgs/triangulate.png,Triangulate,A tool for adding geometric patterns to images,http://mfviz.com/triangulate,artistic rendering of triangulated mountain,1,1
 imgs/central-limit.png,Central Limit Theorem,A visual explanation describing the theory and importance of the Central Limit Theorem.,http://mfviz.com/central-limit,histogram of uniform distribution,1,1
 imgs/tobacco.png,Tobacco Use,Smoking trends around the world from 1980 - 2012.,http://vizhub.healthdata.org/tobacco/,sunburst diagram of number of smokers,1,1
-imgs/data_wrangler.png,Data Wrangler,A tool to help write data transformation code,https://observablehq.com/@observablehq/data-wrangler,,,
-imgs/cheatsheets.png,Plot Cheatsheets,Interactive documentation for Observable Plot,https://observablehq.com/@observablehq/plot-cheatsheets,Cheatsheets icon,,
+imgs/wrangler.png,Data Wrangler,A tool to help write data transformation code,https://observablehq.com/@observablehq/data-wrangler,,1,1
+imgs/plot_cheatsheets.png,Plot Cheatsheets,Interactive documentation for Observable Plot,https://observablehq.com/@observablehq/plot-cheatsheets,Cheatsheets icon,1,1
