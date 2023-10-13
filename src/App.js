@@ -23,8 +23,7 @@ class App extends Component {
             <div className="App">
                 <div className="App-header">
                     <h1>Michael Freeman</h1>
-                    <h2>Data visualization engineer at&nbsp;
-                        <a href="https://observablehq.com/" target="_blank">Observable</a>
+                    <h2>Data visualization software engineer
                     </h2>
                     <h2>Former teaching professor at&nbsp;
                         <a href="https://ischool.uw.edu" target="_blank">UW iSchool</a></h2>

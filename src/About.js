@@ -15,7 +15,7 @@ class About extends Component {
             <div className="About">
                 <MuiThemeProvider>
                     <div className="about-wrapper">
-                        <p>Hi, I'm Mike. I'm a Data Visualization Developer at Observable, and former faculty member at the University of Washington's
+                        <p>Hi, I'm Mike. I'm a data visualization software engineer and designer (formerly at Observablehq), and former faculty member at the University of Washington's
                             Information School. I have a background in Sociology and Health Measurement, and
                             now specialize in designing and building robut data visualizations.
                             I'm interested in socially impactful applications of these skills, and am still
