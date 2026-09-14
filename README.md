@@ -1,13 +1,21 @@
 mkfreeman.github.io
 ===================
 
-Personal site
+Personal site, built with [Astro](https://astro.build) + [Tailwind CSS](https://tailwindcss.com).
 
-Note to self! I seem to have crossed some wires with the build process here. The
-whole site should be redone, but next time I want to make a tiny edit, make sure
-to:
+## Development
 
-- Edit the `src/`
-- Run `npm run build`
-- Move the created files from `build/` to the root
-- Commit and push
+```
+npm install
+npm run dev
+```
+
+## Content
+
+Section content lives in `src/data/*.json`. Images live in `public/imgs/`.
+
+## Deploy
+
+Pushing to `master` builds and deploys automatically via `.github/workflows/deploy.yml`
+(GitHub Actions → GitHub Pages). In the repo's Settings → Pages, the source should be
+set to "GitHub Actions" (one-time setup). No manual build/copy step needed.

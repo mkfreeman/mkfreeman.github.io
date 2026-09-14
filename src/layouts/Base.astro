@@ -1,0 +1,31 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Michael Freeman — Data Visualization Engineer",
+  description = "Michael Freeman builds software, visualizations, and teaching materials at the intersection of data and design.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/imgs/twitter-card.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="bg-[#f9f9f7] text-[#0b0b0b] antialiased">
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Programming Skills for Data Science",
+    "description": "A book, co-authored with Joel Ross, teaching R and version control as tools for asking questions of data.",
+    "url": "https://www.amazon.com/gp/product/0135133106",
+    "img": "/imgs/front-cover.png",
+    "alt": "Programming Skills for Data Science book cover"
+  },
+  {
+    "title": "Interactive Data Visualization",
+    "description": "An open-source book teaching the fundamentals of D3.js, assuming no prior knowledge.",
+    "url": "https://info474-s17.github.io/book/",
+    "img": "/imgs/d3-logo.png",
+    "alt": "D3.js logo"
+  },
+  {
+    "title": "Client-Side Web Development",
+    "description": "An open-source book, co-authored with Joel Ross, covering HTML and CSS through modern React apps.",
+    "url": "https://info343.github.io/",
+    "img": "/imgs/react-logo.svg",
+    "alt": "React logo"
+  },
+  {
+    "title": "Technical Foundations of Informatics",
+    "description": "\"Intro to intro to data science\" — an open-source book teaching students to write code to ask questions of data.",
+    "url": "https://info201.github.io",
+    "img": "/imgs/r-logo.png",
+    "alt": "R programming language logo"
+  }
+]

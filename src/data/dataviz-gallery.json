@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Summary Table",
+    "description": "A utility to quickly summarize a dataset — distributions, types, and missing values at a glance.",
+    "url": "https://observablehq.com/@observablehq/summary-table",
+    "img": "/imgs/summary_table.png",
+    "alt": "Summary table showing column distributions"
+  },
+  {
+    "title": "Discovering Date Patterns",
+    "description": "Novel representations for finding structure in seemingly simple timeseries data.",
+    "url": "https://observablehq.com/@observablehq/discovering-date-patterns",
+    "img": "/imgs/discovering_patterns.png",
+    "alt": "Diagram revealing patterns in a timeseries"
+  },
+  {
+    "title": "Prediction Metrics",
+    "description": "A visual explanation of binary prediction metrics — precision, recall, and the tradeoffs between them.",
+    "url": "http://mfviz.com/binary-predictions",
+    "img": "/imgs/binary-preds.png",
+    "alt": "Chart of prediction accuracy"
+  },
+  {
+    "title": "Central Limit Theorem",
+    "description": "A visual explanation of the theory and importance of the Central Limit Theorem.",
+    "url": "http://mfviz.com/central-limit",
+    "img": "/imgs/central-limit.png",
+    "alt": "Histogram converging toward a normal distribution"
+  },
+  {
+    "title": "Tobacco Use",
+    "description": "Smoking trends around the world from 1980–2012, for the Institute for Health Metrics and Evaluation.",
+    "url": "http://vizhub.healthdata.org/tobacco/",
+    "img": "/imgs/tobacco.png",
+    "alt": "Sunburst diagram of global smoking rates"
+  },
+  {
+    "title": "Data Wrangler",
+    "description": "A tool to help write data transformation code, built for Observable.",
+    "url": "https://observablehq.com/@observablehq/data-wrangler",
+    "img": "/imgs/wrangler.png",
+    "alt": "Data wrangling interface"
+  },
+  {
+    "title": "Plot Cheatsheets",
+    "description": "Interactive documentation for Observable Plot.",
+    "url": "https://observablehq.com/@observablehq/plot-cheatsheets",
+    "img": "/imgs/plot_cheatsheets.png",
+    "alt": "Grid of Observable Plot chart examples"
+  }
+]

@@ -1,0 +1,143 @@
+---
+// A tiny illustration of duckplot's API: one declarative call, one chart.
+const data = [
+  { week: "W1", users: 42 },
+  { week: "W2", users: 58 },
+  { week: "W3", users: 51 },
+  { week: "W4", users: 74 },
+  { week: "W5", users: 88 },
+  { week: "W6", users: 81 },
+  { week: "W7", users: 103 },
+];
+---
+
+<div class="duckplot-demo rounded-xl border border-black/10 bg-white p-4 sm:p-5" data-points={JSON.stringify(data)}>
+  <div class="mb-4 flex items-center justify-between gap-3">
+    <p class="text-sm font-medium text-[#0b0b0b]">Weekly active users</p>
+    <select class="dp-mark rounded-md border border-black/15 bg-white px-2 py-1 text-sm text-[#0b0b0b]">
+      <option value="bar">bar</option>
+      <option value="line">line</option>
+      <option value="dot">dot</option>
+    </select>
+  </div>
+
+  <svg class="dp-chart w-full" viewBox="0 0 400 200" role="img" aria-label="Weekly active users chart"></svg>
+
+  <pre class="dp-code mt-4 overflow-x-auto rounded-lg bg-[#0b0b0b] p-3 text-xs leading-relaxed text-[#e1e0d9]"><code></code></pre>
+</div>
+
+<script>
+  import { select } from "d3-selection";
+  import { scaleBand, scaleLinear, scalePoint } from "d3-scale";
+  import { max } from "d3-array";
+  import { line as d3line } from "d3-shape";
+
+  type Point = { week: string; users: number };
+
+  document.querySelectorAll<HTMLElement>(".duckplot-demo").forEach((root) => {
+    const data: Point[] = JSON.parse(root.dataset.points || "[]");
+    const svg = select(root.querySelector<SVGSVGElement>(".dp-chart")!);
+    const select_ = root.querySelector<HTMLSelectElement>(".dp-mark")!;
+    const code = root.querySelector<HTMLElement>(".dp-code code")!;
+
+    const width = 400;
+    const height = 200;
+    const margin = { top: 10, right: 10, bottom: 24, left: 30 };
+    const color = "#2a78d6";
+
+    const x = scaleBand<string>()
+      .domain(data.map((d) => d.week))
+      .range([margin.left, width - margin.right])
+      .padding(0.35);
+
+    const xPoint = scalePoint<string>()
+      .domain(data.map((d) => d.week))
+      .range([margin.left, width - margin.right])
+      .padding(0.5);
+
+    const y = scaleLinear()
+      .domain([0, (max(data, (d) => d.users) ?? 0) * 1.15])
+      .range([height - margin.bottom, margin.top]);
+
+    function renderCode(mark: string) {
+      code.textContent = `duckPlot(db, "signups")\n  .x("week")\n  .y("users")\n  .mark("${mark}")\n  .render()`;
+    }
+
+    function draw(mark: string) {
+      svg.attr("viewBox", `0 0 ${width} ${height}`);
+      svg.selectAll("*").remove();
+
+      // axis
+      svg
+        .append("line")
+        .attr("x1", margin.left)
+        .attr("x2", width - margin.right)
+        .attr("y1", height - margin.bottom)
+        .attr("y2", height - margin.bottom)
+        .attr("stroke", "#c3c2b7");
+
+      svg
+        .selectAll(".tick")
+        .data(data)
+        .join("text")
+        .attr("class", "tick")
+        .attr("x", (d) => (x(d.week) ?? 0) + x.bandwidth() / 2)
+        .attr("y", height - margin.bottom + 14)
+        .attr("text-anchor", "middle")
+        .attr("font-size", 9)
+        .attr("fill", "#898781")
+        .text((d) => d.week);
+
+      if (mark === "bar") {
+        svg
+          .selectAll(".bar")
+          .data(data)
+          .join("rect")
+          .attr("class", "bar")
+          .attr("x", (d) => x(d.week) ?? 0)
+          .attr("width", x.bandwidth())
+          .attr("y", (d) => y(d.users))
+          .attr("height", (d) => y(0) - y(d.users))
+          .attr("rx", 3)
+          .attr("fill", color);
+      } else if (mark === "line") {
+        const path = d3line<Point>()
+          .x((d) => xPoint(d.week) ?? 0)
+          .y((d) => y(d.users));
+        svg
+          .append("path")
+          .attr("d", path(data))
+          .attr("fill", "none")
+          .attr("stroke", color)
+          .attr("stroke-width", 2);
+        svg
+          .selectAll(".dot")
+          .data(data)
+          .join("circle")
+          .attr("class", "dot")
+          .attr("cx", (d) => xPoint(d.week) ?? 0)
+          .attr("cy", (d) => y(d.users))
+          .attr("r", 3)
+          .attr("fill", color);
+      } else {
+        svg
+          .selectAll(".dot")
+          .data(data)
+          .join("circle")
+          .attr("class", "dot")
+          .attr("cx", (d) => xPoint(d.week) ?? 0)
+          .attr("cy", (d) => y(d.users))
+          .attr("r", 5)
+          .attr("fill", color);
+      }
+    }
+
+    select_.addEventListener("change", () => {
+      draw(select_.value);
+      renderCode(select_.value);
+    });
+
+    draw(select_.value);
+    renderCode(select_.value);
+  });
+</script>
