@@ -21,7 +21,6 @@
     "url": "https://info201.github.io/",
     "img": "/imgs/info-201.png",
     "alt": "Sunburst diagram of the course curriculum, one ring per unit",
-    "logo": true,
-    "imgBg": "#ffffff"
+    "logo": true
   }
 ]

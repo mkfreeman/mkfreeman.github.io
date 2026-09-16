@@ -37,7 +37,7 @@ const { items } = Astro.props;
         >
           {item.img && (
             <div
-              class={`aspect-video w-full overflow-hidden bg-[#f0efec] ${item.logo ? "flex items-center justify-center p-3" : ""}`}
+              class={`aspect-video w-full overflow-hidden ${item.logo ? "flex items-center justify-center bg-white p-3" : "bg-[#f0efec]"}`}
               style={item.imgBg ? `background-color: ${item.imgBg}` : undefined}
             >
               <img
