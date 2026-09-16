@@ -1,0 +1,56 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import CardGrid from "./CardGrid.astro";
+import SankeyDemo from "./SankeyDemo.astro";
+import dataviz from "../data/dataviz-gallery.json";
+---
+
+<section id="dataviz" class="border-t border-black/20">
+  <div class="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-12">
+    <SectionHeading
+      eyebrow="Data Visualization"
+      title="I draw information to help answer questions."
+      blurb="In addition to building software that facilitates data exploration, I specialize in creating detailed and custom visualizations that reveal meaningful patterns in large datasets."
+    />
+
+    <div class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <div class="flex h-full flex-col rounded-xl border border-black/20 bg-white p-4 sm:p-5">
+        <h3 class="text-lg font-semibold text-[#0b0b0b]">Financing Global Health</h3>
+        <p class="mt-1 text-sm text-[#52514e]">
+          Tracing the flow of billions of dollars in Global Health, from sources, through intermediaries, to different causes.
+        </p>
+        <a
+          href="https://vizhub.healthdata.org/fgh/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-2 inline-block text-sm font-medium text-[#be185d] hover:underline">Explore the interactive →</a
+        >
+        <div class="mt-4 flex-1 overflow-hidden">
+          <SankeyDemo />
+        </div>
+      </div>
+      <div class="flex h-full flex-col rounded-xl border border-black/20 bg-white p-4 sm:p-5">
+        <h3 class="text-lg font-semibold text-[#0b0b0b]">Discovering Date Patterns</h3>
+        <p class="mt-1 text-sm text-[#52514e]">A series exploring a year's worth of hourly electricity demand data.</p>
+        <a
+          href="https://observablehq.com/@observablehq/discovering-date-patterns"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-2 inline-block text-sm font-medium text-[#be185d] hover:underline">Open the notebook →</a
+        >
+        <div class="mt-4 flex-1 overflow-hidden rounded-lg bg-[#f0efec]">
+          <img
+            src="/imgs/discovering_patterns.png"
+            alt="Diagram revealing patterns in a timeseries"
+            class="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mt-16 text-sm font-medium uppercase tracking-widest text-[#898781]">More selected work</h3>
+    <div class="mt-4">
+      <CardGrid items={dataviz} />
+    </div>
+  </div>
+</section>

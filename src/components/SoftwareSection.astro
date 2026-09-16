@@ -1,0 +1,19 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import SoftwareCard from "./SoftwareCard.astro";
+import software from "../data/software.json";
+---
+
+<section id="software" class="border-t border-black/20 bg-white">
+  <div class="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-12">
+    <SectionHeading
+      eyebrow="Software Engineering"
+      title="I build software tools that let people interact with their data."
+      blurb="I have five years of experience making software that people use to summarize, transform, and explore their data. Some examples:"
+    />
+
+    <div class="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-2">
+      {software.map((item) => <SoftwareCard item={item} />)}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,116 @@
+---
+const segments = [
+  {
+    label: "Global Health Researcher",
+    org: "IHME",
+    years: 5,
+    range: "2010–2015",
+    color: "#fbb4ae",
+    detail: "Post-Bachelor Fellow (2010–2013); Data Visualization Specialist (2013–2015).",
+  },
+  {
+    label: "Associate Teaching Professor",
+    org: "UW iSchool",
+    years: 6,
+    range: "2015–2021",
+    color: "#fdc086",
+    detail: "Lecturer (2015–2018), then Associate Teaching Professor (2018–2021). Fulbright Scholar in Madrid (2019–2020).",
+  },
+  {
+    label: "Data Analytics Startups",
+    org: "Observable, Summer.io",
+    years: 5,
+    range: "2021–2026",
+    color: "#beaed4",
+    detail: "Software Engineer at Observable (2021–2023); Principal Visualization Engineer at Summer.io (2023–2026).",
+  },
+];
+
+const startYear = 2010;
+const totalYears = segments.reduce((sum, s) => sum + s.years, 0);
+let cumulative = 0;
+const ticks = [{ year: startYear, pct: 0 }];
+for (const s of segments) {
+  cumulative += s.years;
+  ticks.push({ year: startYear + cumulative, pct: (cumulative / totalYears) * 100 });
+}
+---
+
+<div class="career-bar relative mt-6 max-w-2xl" data-segments={JSON.stringify(segments)}>
+  <div class="flex h-28 w-full overflow-hidden rounded-xl sm:h-20">
+    {
+      segments.map((s, i) => (
+        <button
+          type="button"
+          class="cb-segment relative flex h-full cursor-pointer flex-col items-center justify-center gap-0.5 border-0 p-1.5 text-center outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+          style={`flex: ${s.years} 0 0%; background:${s.color}; ${i < segments.length - 1 ? "margin-right:2px;" : ""}`}
+          data-index={i}
+          aria-label={`${s.label} at ${s.org}, ${s.years} years (${s.range})`}
+        >
+          <span class="text-[11px] font-semibold leading-tight text-[#0b0b0b] sm:text-sm">{s.label}</span>
+          <span class="text-[10px] leading-tight text-[#0b0b0b]/70 sm:text-xs">{s.org}</span>
+        </button>
+      ))
+    }
+  </div>
+  <div class="relative mt-2 h-7">
+    <div class="absolute inset-x-0 top-0 h-px bg-[#e1e0d9]" />
+    {
+      ticks.map((t) => (
+        <div
+          class="absolute top-0 flex flex-col items-center"
+          style={`left:${t.pct}%; transform:translateX(${t.pct === 0 ? "0" : t.pct === 100 ? "-100%" : "-50%"})`}
+        >
+          <span class="h-1.5 w-px bg-[#c3c2b7]" />
+          <span class="mt-1 text-[10px] tabular-nums text-[#898781]">{t.year}</span>
+        </div>
+      ))
+    }
+  </div>
+  <div class="cb-tooltip pointer-events-none absolute z-10 hidden w-64 max-w-[80vw] rounded-lg bg-[#0b0b0b] p-3 text-xs leading-relaxed text-white shadow-lg">
+    <p class="cb-tooltip-title font-semibold" />
+    <p class="cb-tooltip-detail mt-1 text-[#c3c2b7]" />
+  </div>
+</div>
+
+<script>
+  type Segment = { label: string; org: string; years: number; range: string; color: string; detail: string };
+
+  document.querySelectorAll<HTMLElement>(".career-bar").forEach((root) => {
+    const segments: Segment[] = JSON.parse(root.dataset.segments || "[]");
+    const tooltip = root.querySelector<HTMLElement>(".cb-tooltip")!;
+    const title = tooltip.querySelector<HTMLElement>(".cb-tooltip-title")!;
+    const detail = tooltip.querySelector<HTMLElement>(".cb-tooltip-detail")!;
+
+    function show(el: HTMLElement, s: Segment) {
+      title.textContent = `${s.label} (${s.range})`;
+      detail.textContent = s.detail;
+      tooltip.classList.remove("hidden");
+
+      const rootRect = root.getBoundingClientRect();
+      const elRect = el.getBoundingClientRect();
+      const centerX = elRect.left - rootRect.left + elRect.width / 2;
+      const tooltipWidth = tooltip.offsetWidth;
+      const clampedLeft = Math.min(Math.max(centerX - tooltipWidth / 2, 0), rootRect.width - tooltipWidth);
+
+      tooltip.style.top = `${elRect.height + 38}px`;
+      tooltip.style.left = `${clampedLeft}px`;
+    }
+
+    function hide() {
+      tooltip.classList.add("hidden");
+    }
+
+    root.querySelectorAll<HTMLButtonElement>(".cb-segment").forEach((el) => {
+      const s = segments[Number(el.dataset.index)];
+      el.addEventListener("mouseenter", () => show(el, s));
+      el.addEventListener("mouseleave", hide);
+      el.addEventListener("focus", () => show(el, s));
+      el.addEventListener("blur", hide);
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        show(el, s);
+      });
+    });
+  });
+</script>

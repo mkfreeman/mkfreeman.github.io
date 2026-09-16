@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Hierarchical Modeling",
+    "description": "Selecting statistical techniques for working with nested (grouped) data.",
+    "url": "https://mfviz.com/hierarchical-models",
+    "img": "/imgs/hierarchy.png",
+    "alt": "Nested circles showing a hierarchical model"
+  },
+  {
+    "title": "Central Limit Theorem",
+    "description": "How to make inferences about populations using an individual sample.",
+    "url": "https://mfviz.com/central-limit",
+    "img": "/imgs/central-limit.png",
+    "alt": "Histogram converging toward a normal distribution"
+  },
+  {
+    "title": "Prediction Metrics",
+    "description": "How to interpret model predictions given tradeoffs in sensitivity and specificity.",
+    "url": "https://mfviz.com/binary-predictions/",
+    "img": "/imgs/binary-preds.png",
+    "alt": "Chart of binary prediction accuracy"
+  }
+]

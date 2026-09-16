@@ -1,0 +1,46 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import CardGrid from "./CardGrid.astro";
+import books from "../data/books.json";
+import courseCurricula from "../data/course-curricula.json";
+---
+
+<section id="teaching" class="border-t border-black/20 bg-white">
+  <div class="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-12">
+    <SectionHeading
+      eyebrow="Teaching"
+      title="I teach people how to work with data."
+      blurb="I spent six years as an Associate Teaching Professor at the University of Washington Information School where I taught Informatics students how to write code to work with data. I've taught dozens of workshops both at conferences and for private companies. Here are some of the resources I've built."
+    />
+
+    <h3 class="mt-10 text-sm font-medium uppercase tracking-widest text-[#898781]">Published books/videos</h3>
+    <div class="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-2">
+      {
+        books.map((b) => (
+          <div class="flex h-full flex-col rounded-xl border border-black/20 bg-white p-4 sm:p-5">
+            <h4 class="text-lg font-semibold text-[#0b0b0b]">{b.title}</h4>
+            <p class="mt-1 text-sm text-[#52514e]">{b.description}</p>
+            <div class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+              <a href={b.primaryUrl} target="_blank" rel="noopener noreferrer" class="font-medium text-[#be185d] hover:underline">
+                {b.primaryLabel} →
+              </a>
+              {b.secondaryUrl && (
+                <a href={b.secondaryUrl} target="_blank" rel="noopener noreferrer" class="font-medium text-[#be185d] hover:underline">
+                  {b.secondaryLabel} →
+                </a>
+              )}
+            </div>
+            <div class="mt-4 aspect-[4/3] overflow-hidden rounded-lg bg-[#f0efec]">
+              <img src={b.img} alt={b.alt} class="h-full w-full object-contain" />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <h3 class="mt-12 text-sm font-medium uppercase tracking-widest text-[#898781]">Open-source curricula</h3>
+    <div class="mt-4">
+      <CardGrid items={courseCurricula} />
+    </div>
+  </div>
+</section>

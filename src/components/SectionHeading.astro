@@ -5,10 +5,40 @@ interface Props {
   blurb: string;
 }
 const { eyebrow, title, blurb } = Astro.props;
+
+// Supports inline links in the blurb using Markdown syntax, e.g.
+// "See this [talk](https://example.com) for more details."
+const linkPattern = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
+type Part = { text: string } | { label: string; href: string };
+const parts: Part[] = [];
+let lastIndex = 0;
+let match: RegExpExecArray | null;
+while ((match = linkPattern.exec(blurb))) {
+  if (match.index > lastIndex) {
+    parts.push({ text: blurb.slice(lastIndex, match.index) });
+  }
+  parts.push({ label: match[1], href: match[2] });
+  lastIndex = match.index + match[0].length;
+}
+if (lastIndex < blurb.length) {
+  parts.push({ text: blurb.slice(lastIndex) });
+}
 ---
 
 <div class="max-w-2xl">
-  <p class="text-sm font-medium uppercase tracking-widest text-[#2a78d6]">{eyebrow}</p>
+  <p class="text-sm font-medium uppercase tracking-widest text-[#be185d]">{eyebrow}</p>
   <h2 class="mt-2 text-3xl font-semibold tracking-tight text-[#0b0b0b] sm:text-4xl">{title}</h2>
-  <p class="mt-4 text-base text-[#52514e] sm:text-lg">{blurb}</p>
+  <p class="mt-4 text-base text-[#52514e] sm:text-lg">
+    {
+      parts.map((part) =>
+        "href" in part ? (
+          <a href={part.href} target="_blank" rel="noopener noreferrer" class="font-medium text-[#be185d] hover:underline">
+            {part.label}
+          </a>
+        ) : (
+          part.text
+        )
+      )
+    }
+  </p>
 </div>

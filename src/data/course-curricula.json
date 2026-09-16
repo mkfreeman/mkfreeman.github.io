@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Client-Side Web Development",
+    "description": "Covers the modern tools and techniques for web development. From the basics of HTML and CSS, to building React apps.",
+    "url": "https://info343.github.io/",
+    "img": "/imgs/react-logo.svg",
+    "alt": "React logo",
+    "logo": true
+  },
+  {
+    "title": "Interactive Information Visualization",
+    "description": "Teaches the skills for building interactive graphics on the web, with a focus on using D3.js.",
+    "url": "https://info474.github.io/",
+    "img": "/imgs/d3-logo.png",
+    "alt": "D3.js logo",
+    "logo": true
+  },
+  {
+    "title": "Technical Foundations of Informatics",
+    "description": "\"Intro to intro to data science\" — teaches how to write code to ask questions of data (mostly the R programming language)",
+    "url": "https://info201.github.io/",
+    "img": "/imgs/info-201.png",
+    "alt": "Sunburst diagram of the course curriculum, one ring per unit",
+    "logo": true
+  }
+]

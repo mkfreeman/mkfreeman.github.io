@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Programming Skills for Data Science",
+    "description": "Teaches the foundational skills necessary for writing code to work with data (focused on the R programming language).",
+    "img": "/imgs/front-cover.png",
+    "alt": "Programming Skills for Data Science book cover",
+    "primaryUrl": "https://www.amazon.com/gp/product/0135133106",
+    "primaryLabel": "View book"
+  },
+  {
+    "title": "Storytelling with Data Visualization",
+    "description": "A video course teaching how to leverage a story's structure to share complex visualizations to a variety of audiences.",
+    "img": "/imgs/storytelling.png",
+    "alt": "Scatter plot of blue points, from the Storytelling with Data Visualization course",
+    "primaryUrl": "https://www.oreilly.com/videos/using-storytelling-to/9781771373616/",
+    "primaryLabel": "See video"
+  }
+]

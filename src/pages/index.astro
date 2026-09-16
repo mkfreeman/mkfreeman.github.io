@@ -2,181 +2,21 @@
 import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
-import SectionHeading from "../components/SectionHeading.astro";
-import CardGrid from "../components/CardGrid.astro";
-import DataTableDemo from "../components/DataTableDemo.astro";
-import DuckplotDemo from "../components/DuckplotDemo.astro";
-import HierarchyDemo from "../components/HierarchyDemo.astro";
-import SankeyDemo from "../components/SankeyDemo.astro";
-import TriangulateDemo from "../components/TriangulateDemo.astro";
-
-import software from "../data/software.json";
-import dataviz from "../data/dataviz-gallery.json";
-import teachingResources from "../data/teaching-resources.json";
-import teachingExplainers from "../data/teaching-explainers.json";
+import SoftwareSection from "../components/SoftwareSection.astro";
+import DatavizSection from "../components/DatavizSection.astro";
+import VisualExplanationsSection from "../components/VisualExplanationsSection.astro";
+import TeachingSection from "../components/TeachingSection.astro";
+import ArtSection from "../components/ArtSection.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Base>
   <Nav />
   <Hero />
-
-  <!-- Software Engineering -->
-  <section id="software" class="border-t border-black/10 bg-white">
-    <div class="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-24">
-      <SectionHeading
-        eyebrow="Software Engineering"
-        title="I build the tools other people build with."
-        blurb="I write software that sits underneath other people's work — components, libraries, and interfaces that turn raw data into something explorable. Most recently at Observable and Summer.io."
-      />
-
-      <div class="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-2">
-        {
-          software.map((item) => (
-            <div class="flex flex-col gap-4">
-              <div>
-                <div class="flex flex-wrap items-baseline gap-x-2">
-                  <h3 class="text-lg font-semibold text-[#0b0b0b]">{item.title}</h3>
-                  <span class="text-sm text-[#898781]">· {item.org}</span>
-                </div>
-                <p class="text-xs uppercase tracking-wide text-[#898781]">{item.period}</p>
-                <p class="mt-2 text-sm text-[#52514e]">{item.description}</p>
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="mt-2 inline-block text-sm font-medium text-[#2a78d6] hover:underline"
-                >
-                  {item.linkLabel} →
-                </a>
-              </div>
-              {item.title === "Data Table" ? <DataTableDemo /> : <DuckplotDemo />}
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <!-- Data Visualization -->
-  <section id="dataviz" class="border-t border-black/10">
-    <div class="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-24">
-      <SectionHeading
-        eyebrow="Data Visualization"
-        title="I design and engineer visualizations that make complex data legible."
-        blurb="I've spent over a decade building charts, dashboards, and statistical explainers for global health, research, and industry — work that has to hold up under real scrutiny, not just look good."
-      />
-
-      <div class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <div>
-          <h3 class="text-lg font-semibold text-[#0b0b0b]">Hierarchical Modeling</h3>
-          <p class="mt-1 text-sm text-[#52514e]">
-            A visual explanation of how hierarchical models let small groups borrow statistical strength from
-            the full dataset.
-          </p>
-          <a
-            href="http://mfviz.com/hierarchical-models"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-2 inline-block text-sm font-medium text-[#2a78d6] hover:underline">Full explainer →</a
-          >
-          <div class="mt-4">
-            <HierarchyDemo />
-          </div>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold text-[#0b0b0b]">Financing Global Health</h3>
-          <p class="mt-1 text-sm text-[#52514e]">
-            An interactive Sankey diagram tracing how money moves through global health, built for the
-            Institute for Health Metrics and Evaluation.
-          </p>
-          <a
-            href="http://vizhub.healthdata.org/fgh/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-2 inline-block text-sm font-medium text-[#2a78d6] hover:underline">Explore the full diagram →</a
-          >
-          <div class="mt-4">
-            <SankeyDemo />
-          </div>
-        </div>
-      </div>
-
-      <h3 class="mt-16 text-sm font-medium uppercase tracking-widest text-[#898781]">More selected work</h3>
-      <div class="mt-4">
-        <CardGrid items={dataviz} />
-      </div>
-    </div>
-  </section>
-
-  <!-- Teaching & Visual Explanations -->
-  <section id="teaching" class="border-t border-black/10 bg-white">
-    <div class="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-24">
-      <SectionHeading
-        eyebrow="Teaching & Visual Explanations"
-        title="I teach through interfaces you can play with."
-        blurb="As a professor at the University of Washington's Information School, I taught data visualization and web development — and I still build interactive explainers that teach a concept by letting you manipulate it."
-      />
-
-      <h3 class="mt-10 text-sm font-medium uppercase tracking-widest text-[#898781]">Visual explanations</h3>
-      <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
-        {
-          teachingExplainers.map((item) => (
-            <a
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="rounded-xl border border-black/10 p-4 transition-shadow hover:shadow-md"
-            >
-              <h4 class="font-medium text-[#0b0b0b]">{item.title}</h4>
-              <p class="mt-1 text-sm text-[#52514e]">{item.description}</p>
-            </a>
-          ))
-        }
-      </div>
-
-      <h3 class="mt-12 text-sm font-medium uppercase tracking-widest text-[#898781]">Books & courses</h3>
-      <div class="mt-4">
-        <CardGrid items={teachingResources} />
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="border-t border-black/10">
-    <div class="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-24">
-      <SectionHeading eyebrow="About" title="A little bit about me." blurb="" />
-
-      <div class="mt-8 grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_320px]">
-        <div class="space-y-4 text-base text-[#52514e]">
-          <p>
-            Hi, I'm Mike. I'm a data visualization engineer and designer — formerly at Observable and
-            Summer.io — and a former faculty member at the University of Washington's Information School. I
-            have a background in sociology and health measurement, and now specialize in designing and
-            building robust data visualizations. I'm interested in socially impactful applications of these
-            skills, and am still figuring out exactly what that means.
-          </p>
-          <p>
-            Outside of client and open-source work, I make data art — mapping datasets and images onto
-            geometric patterns. <a href="http://mfviz.com/triangulate" target="_blank" rel="noopener noreferrer" class="text-[#2a78d6] hover:underline">Triangulate</a>,
-            below, turns any photo into a low-poly mosaic by sampling its colors across a randomly generated
-            triangle mesh — the same idea behind mapping and geospatial visualization, just applied to pixels
-            instead of geography.
-          </p>
-          <p>
-            Find me on <a href="https://twitter.com/mf_viz" target="_blank" rel="noopener noreferrer" class="text-[#2a78d6] hover:underline">X</a>, or shoot me an
-            <a href="mailto:michael.k.freeman@gmail.com" class="text-[#2a78d6] hover:underline">email</a>.
-          </p>
-        </div>
-        <img src="/imgs/freeman_photo.png" alt="Portrait of Michael Freeman" class="w-full rounded-xl object-cover" />
-      </div>
-
-      <div class="mt-8">
-        <TriangulateDemo />
-      </div>
-    </div>
-  </section>
-
-  <footer class="border-t border-black/10 px-5 py-8 text-center text-sm text-[#898781] sm:px-8">
-    <p>© {new Date().getFullYear()} Michael Freeman</p>
-  </footer>
+  <SoftwareSection />
+  <DatavizSection />
+  <VisualExplanationsSection />
+  <TeachingSection />
+  <ArtSection />
+  <Footer />
 </Base>

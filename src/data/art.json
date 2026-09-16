@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Triangulate",
+    "description": "Makes geometric patterns of images with voronoi diagrams + smoothing algorithms.",
+    "url": "https://mfviz.com/triangulate",
+    "img": "/imgs/triangulate.png",
+    "alt": "Low-poly triangulated portrait of Michael Freeman and his dog"
+  },
+  {
+    "title": "Flow Fields",
+    "description": "Generative art built from particles moving through vector flow fields.",
+    "url": "https://mfviz.com/flowFields/",
+    "img": "/imgs/flow-fields.png",
+    "alt": "Generative flow field artwork"
+  },
+  {
+    "title": "Commit History",
+    "description": "Repo commit activity over a year, engraved on a coffee tumbler.",
+    "img": "/imgs/git-mug.png",
+    "alt": "A repo's Git history, engraved on a coffee tumbler"
+  }
+]

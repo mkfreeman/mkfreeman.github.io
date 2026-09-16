@@ -1,51 +1,23 @@
 [
   {
-    "title": "Summary Table",
-    "description": "A utility to quickly summarize a dataset — distributions, types, and missing values at a glance.",
-    "url": "https://observablehq.com/@observablehq/summary-table",
-    "img": "/imgs/summary_table.png",
-    "alt": "Summary table showing column distributions"
+    "title": "Texas Redistricting",
+    "description": "Exposing the hidden changes in proposed congressional district boundaries.",
+    "url": "https://observablehq.com/@observablehq/texas-redistricting",
+    "img": "/imgs/texas-redistricting.png",
+    "alt": "Grid of hatched maps comparing current and proposed Texas congressional districts"
   },
   {
-    "title": "Discovering Date Patterns",
-    "description": "Novel representations for finding structure in seemingly simple timeseries data.",
-    "url": "https://observablehq.com/@observablehq/discovering-date-patterns",
-    "img": "/imgs/discovering_patterns.png",
-    "alt": "Diagram revealing patterns in a timeseries"
+    "title": "Transit Access Map",
+    "description": "Finding access gaps for naturally occurring retirement communities in Toronto.",
+    "url": "https://mfviz.com/norc-map/",
+    "img": "/imgs/norc-map.png",
+    "alt": "Map of Toronto showing transit stops linked to senior housing buildings"
   },
   {
-    "title": "Prediction Metrics",
-    "description": "A visual explanation of binary prediction metrics — precision, recall, and the tradeoffs between them.",
-    "url": "http://mfviz.com/binary-predictions",
-    "img": "/imgs/binary-preds.png",
-    "alt": "Chart of prediction accuracy"
-  },
-  {
-    "title": "Central Limit Theorem",
-    "description": "A visual explanation of the theory and importance of the Central Limit Theorem.",
-    "url": "http://mfviz.com/central-limit",
-    "img": "/imgs/central-limit.png",
-    "alt": "Histogram converging toward a normal distribution"
-  },
-  {
-    "title": "Tobacco Use",
-    "description": "Smoking trends around the world from 1980–2012, for the Institute for Health Metrics and Evaluation.",
-    "url": "http://vizhub.healthdata.org/tobacco/",
-    "img": "/imgs/tobacco.png",
-    "alt": "Sunburst diagram of global smoking rates"
-  },
-  {
-    "title": "Data Wrangler",
-    "description": "A tool to help write data transformation code, built for Observable.",
-    "url": "https://observablehq.com/@observablehq/data-wrangler",
-    "img": "/imgs/wrangler.png",
-    "alt": "Data wrangling interface"
-  },
-  {
-    "title": "Plot Cheatsheets",
-    "description": "Interactive documentation for Observable Plot.",
-    "url": "https://observablehq.com/@observablehq/plot-cheatsheets",
-    "img": "/imgs/plot_cheatsheets.png",
-    "alt": "Grid of Observable Plot chart examples"
+    "title": "San Francisco Evictions",
+    "description": "A tutorial from my textbook on mapping eviction notices.",
+    "url": "https://github.com/programming-for-data-science/in-action/tree/master/ggplot2",
+    "img": "/imgs/eviction-notices.png",
+    "alt": "Heatmap of eviction notices filed across San Francisco"
   }
 ]

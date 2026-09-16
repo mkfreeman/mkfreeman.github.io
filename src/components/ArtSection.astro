@@ -1,0 +1,19 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import CardGrid from "./CardGrid.astro";
+import art from "../data/art.json";
+---
+
+<section id="art" class="border-t border-black/20">
+  <div class="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-12">
+    <SectionHeading
+      eyebrow="Art"
+      title="I (attempt to) make art."
+      blurb="While I prioritize interpretability in data visualization, I also enjoy exploring the purely aesthetic and creative side of software and data. Here are some things I've made that I think are beautiful."
+    />
+
+    <div class="mt-10">
+      <CardGrid items={art} />
+    </div>
+  </div>
+</section>

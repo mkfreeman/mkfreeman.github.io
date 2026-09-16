@@ -1,0 +1,19 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import CardGrid from "./CardGrid.astro";
+import visualExplanations from "../data/visual-explanations.json";
+---
+
+<section id="visual-explanations" class="border-t border-black/20">
+  <div class="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-12">
+    <SectionHeading
+      eyebrow="Visual Explanations"
+      title="I use visualizations to explain difficult concepts."
+      blurb="I've built interactive explanations of statistical and machine learning concepts that have been used in my classroom and by hundreds of thousands of other people. See this [talk](https://mfviz.com/strata-2019-slides/#/) for more details."
+    />
+
+    <div class="mt-10">
+      <CardGrid items={visualExplanations} />
+    </div>
+  </div>
+</section>

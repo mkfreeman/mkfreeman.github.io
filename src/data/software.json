@@ -1,19 +1,23 @@
 [
   {
-    "title": "Data Table",
-    "org": "Observable",
-    "period": "2021–2025 · Visualization Engineer",
-    "description": "Built the interactive table used across Observable notebooks and Framework apps — fast, sortable, filterable inspection of any dataset, no query required.",
-    "url": "https://observablehq.com/framework/inputs/table",
-    "linkLabel": "See it in the docs"
-  },
-  {
     "title": "Duckplot",
     "org": "Summer.io",
-    "period": "Through Feb 2026 · Principal Visualization Engineer",
-    "description": "Open-source library connecting DuckDB to Observable Plot, so a big dataset becomes a chart in one line — the heavy computation stays in the database instead of the browser.",
+    "period": "2023–2026 · Principal Visualization Engineer",
+    "description": "Open-sourced a chart building JavaScript package optimized for working with DuckDB Databases.",
     "url": "https://www.duckplot.com/",
     "linkLabel": "duckplot.com",
-    "repo": "https://github.com/SummerForeverCo/duck-plot"
+    "repo": "https://github.com/SummerForeverCo/duck-plot",
+    "img": "/imgs/duckplot-example.png",
+    "alt": "Duckplot chart example built on top of a DuckDB query"
+  },
+  {
+    "title": "Data Table",
+    "org": "Observable",
+    "period": "2021–2023 · Software Engineer",
+    "description": "Designed and built highly interactive visual summaries for displaying tabular data in analytics notebooks.",
+    "url": "https://observablehq.com/documentation/cells/data-table",
+    "linkLabel": "See it in the docs",
+    "img": "/imgs/data-table-cell.png",
+    "alt": "Observable Data Table cell showing column type, distribution, and a selected row"
   }
 ]

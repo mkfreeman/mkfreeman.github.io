@@ -1,34 +1,30 @@
 ---
 const links = [
   { href: "#software", label: "Software" },
-  { href: "#dataviz", label: "Data Viz" },
+  { href: "#dataviz", label: "Data Visualization", shortLabel: "Visualization" },
+  { href: "#visual-explanations", label: "Visual Explanations", shortLabel: "Explanations" },
   { href: "#teaching", label: "Teaching" },
-  { href: "#about", label: "About" },
+  { href: "#art", label: "Art" },
 ];
 ---
 
-<header class="sticky top-0 z-50 border-b border-black/10 bg-[#f9f9f7]/90 backdrop-blur">
+<header class="sticky top-0 z-50 border-b border-black/20 bg-[#f9f9f7]/90 backdrop-blur">
   <nav class="mx-auto flex max-w-5xl items-center justify-between px-5 py-3 sm:px-8">
-    <a href="#top" class="text-sm font-semibold tracking-tight">Michael Freeman</a>
+    <a href="#top" class="text-sm font-semibold tracking-tight text-[#be185d]">Michael Freeman</a>
 
     <ul class="hidden gap-8 text-sm text-[#52514e] sm:flex">
       {
         links.map((link) => (
           <li>
-            <a href={link.href} class="transition-colors hover:text-[#0b0b0b]">
-              {link.label}
+            <a href={link.href} data-nav-link class="transition-colors hover:text-[#0b0b0b]">
+              <span class="hidden min-[700px]:inline-block" data-bold-text={link.label}>{link.label}</span>
+              <span class="inline-block min-[700px]:hidden" data-bold-text={link.shortLabel ?? link.label}>
+                {link.shortLabel ?? link.label}
+              </span>
             </a>
           </li>
         ))
-      }
-      <li>
-        <a
-          href="/freeman-cv.pdf"
-          class="transition-colors hover:text-[#0b0b0b]"
-          target="_blank"
-          rel="noopener noreferrer">CV</a
-        >
-      </li>
+      }     
     </ul>
 
     <button
@@ -48,26 +44,41 @@ const links = [
     </button>
   </nav>
 
-  <ul id="nav-menu" hidden class="flex flex-col gap-1 border-t border-black/10 px-5 pb-4 text-sm sm:hidden">
+  <ul id="nav-menu" hidden class="flex flex-col gap-1 border-t border-black/20 px-5 pb-4 text-sm sm:hidden">
     {
       links.map((link) => (
         <li>
-          <a href={link.href} class="block rounded-md px-2 py-2.5 text-[#0b0b0b] hover:bg-black/5">
+          <a href={link.href} data-nav-link class="block rounded-md px-2 py-2.5 text-[#0b0b0b] hover:bg-black/5">
             {link.label}
           </a>
         </li>
       ))
     }
-    <li>
-      <a
-        href="/freeman-cv.pdf"
-        class="block rounded-md px-2 py-2.5 text-[#0b0b0b] hover:bg-black/5"
-        target="_blank"
-        rel="noopener noreferrer">CV</a
-      >
-    </li>
+   
   </ul>
 </header>
+
+<style>
+  a[data-nav-link][data-active] {
+    color: #be185d;
+    font-weight: 500;
+  }
+
+  /* Reserve width for the bold state so links don't shift as the active
+     section changes while scrolling — each label's box is pre-sized to its
+     own bold rendering via an invisible ::after copy. */
+  [data-bold-text] {
+    position: relative;
+  }
+  [data-bold-text]::after {
+    content: attr(data-bold-text);
+    display: block;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    font-weight: 500;
+  }
+</style>
 
 <script>
   const toggle = document.getElementById("nav-toggle");
@@ -91,4 +102,60 @@ const links = [
       iconClose?.classList.add("hidden");
     })
   );
+
+  // Scroll spy: highlight the nav link for the section currently in view.
+  // Sections here are much taller than the viewport, so IntersectionObserver's
+  // enter/exit events are unreliable — instead, on each scroll, pick the last
+  // section whose top has passed the header.
+  const header = document.querySelector<HTMLElement>("header");
+  const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>("a[data-nav-link]"));
+  const sections = navLinks
+    .map((link) => document.getElementById(link.getAttribute("href")?.slice(1) ?? ""))
+    .filter((el): el is HTMLElement => el !== null);
+
+  function setActive(id: string | null) {
+    navLinks.forEach((link) => {
+      link.toggleAttribute("data-active", id !== null && link.getAttribute("href") === `#${id}`);
+    });
+  }
+
+  function updateActiveSection() {
+    // Near the bottom of the page there may not be enough scroll room left for
+    // the last section's top to ever clear the header offset — force it active.
+    const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+    if (atBottom) {
+      setActive(sections[sections.length - 1]?.id ?? null);
+      return;
+    }
+
+    const offset = (header?.offsetHeight ?? 0) + 8;
+    const scrollPos = window.scrollY + offset;
+
+    let currentId: string | null = null;
+    for (const section of sections) {
+      if (section.offsetTop <= scrollPos) {
+        currentId = section.id;
+      }
+    }
+    setActive(currentId);
+  }
+
+  if (sections.length) {
+    let ticking = false;
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            updateActiveSection();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+
+    updateActiveSection();
+  }
 </script>
