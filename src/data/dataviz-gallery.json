@@ -17,7 +17,7 @@
     "title": "San Francisco Evictions",
     "description": "A tutorial from my textbook on mapping eviction notices.",
     "url": "https://github.com/programming-for-data-science/in-action/tree/master/ggplot2",
-    "img": "/imgs/eviction-notices.png",
+    "img": "/imgs/eviction-notices.jpg",
     "alt": "Heatmap of eviction notices filed across San Francisco"
   }
 ]
