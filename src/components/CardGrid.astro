@@ -7,6 +7,7 @@ interface Item {
   alt?: string;
   comingSoon?: boolean;
   logo?: boolean;
+  imgBg?: string;
 }
 interface Props {
   items: Item[];
@@ -35,7 +36,10 @@ const { items } = Astro.props;
           class="group flex flex-col overflow-hidden rounded-xl border border-black/20 bg-white transition-shadow hover:shadow-md"
         >
           {item.img && (
-            <div class={`aspect-video w-full overflow-hidden bg-[#f0efec] ${item.logo ? "flex items-center justify-center p-3" : ""}`}>
+            <div
+              class={`aspect-video w-full overflow-hidden bg-[#f0efec] ${item.logo ? "flex items-center justify-center p-3" : ""}`}
+              style={item.imgBg ? `background-color: ${item.imgBg}` : undefined}
+            >
               <img
                 src={item.img}
                 alt={item.alt || item.title}
