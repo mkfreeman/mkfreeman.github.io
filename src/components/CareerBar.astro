@@ -6,7 +6,7 @@ const segments = [
     years: 5,
     range: "2010–2015",
     color: "#fbb4ae",
-    detail: "Post-Bachelor Fellow (2010–2013); Data Visualization Specialist (2013–2015).",
+    detail: ["Post-Bachelor Fellow (2010–2013)", "Data Visualization Specialist (2013–2015)"],
   },
   {
     label: "Associate Teaching Professor",
@@ -14,7 +14,7 @@ const segments = [
     years: 6,
     range: "2015–2021",
     color: "#fdc086",
-    detail: "Lecturer (2015–2018), then Associate Teaching Professor (2018–2021). Fulbright Scholar in Madrid (2019–2020).",
+    detail: ["Lecturer (2015–2018)", "Associate Teaching Professor (2018–2021)", "Fulbright Scholar in Madrid (2019–2020)"],
   },
   {
     label: "Data Analytics Startups",
@@ -22,7 +22,7 @@ const segments = [
     years: 5,
     range: "2021–2026",
     color: "#beaed4",
-    detail: "Software Engineer at Observable (2021–2023); Principal Visualization Engineer at Summer.io (2023–2026).",
+    detail: ["Software Engineer at Observable (2021–2023)", "Principal Visualization Engineer at Summer.io (2023–2026)"],
   },
 ];
 
@@ -67,14 +67,14 @@ for (const s of segments) {
       ))
     }
   </div>
-  <div class="cb-tooltip pointer-events-none absolute z-10 hidden w-64 max-w-[80vw] rounded-lg bg-[#0b0b0b] p-3 text-xs leading-relaxed text-white shadow-lg">
+  <div class="cb-tooltip pointer-events-none absolute z-10 hidden w-max max-w-[92vw] rounded-lg bg-[#0b0b0b] p-4 text-sm leading-relaxed text-white shadow-lg">
     <p class="cb-tooltip-title font-semibold" />
-    <p class="cb-tooltip-detail mt-1 text-[#c3c2b7]" />
+    <ul class="cb-tooltip-detail mt-1.5 space-y-1 text-[#c3c2b7]" />
   </div>
 </div>
 
 <script>
-  type Segment = { label: string; org: string; years: number; range: string; color: string; detail: string };
+  type Segment = { label: string; org: string; years: number; range: string; color: string; detail: string[] };
 
   document.querySelectorAll<HTMLElement>(".career-bar").forEach((root) => {
     const segments: Segment[] = JSON.parse(root.dataset.segments || "[]");
@@ -84,7 +84,13 @@ for (const s of segments) {
 
     function show(el: HTMLElement, s: Segment) {
       title.textContent = `${s.label} (${s.range})`;
-      detail.textContent = s.detail;
+      detail.replaceChildren(
+        ...s.detail.map((item) => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          return li;
+        }),
+      );
       tooltip.classList.remove("hidden");
 
       const rootRect = root.getBoundingClientRect();
